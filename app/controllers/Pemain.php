@@ -15,5 +15,12 @@
             $this->view('pemain/detail', $data);
             $this->view('templates/footer');
         }
+        public function tambah(){
+            // var_dump($_POST);
+            if ($this->model('Pemain_model')->tambahGetDataPemain($_POST) > 0){
+                header('Location: ' . BASEURL . '/pemain');
+                exit;
+            }
+        }
     }
 ?>
