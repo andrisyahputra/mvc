@@ -3,12 +3,11 @@
         <h3>Daftar Pemain</h3>
 
         <?php foreach($data['pemain'] as $pemain) : ?>
-            <ul>
-                <li>Nama : <?= $pemain['nama'] ?></li>
-                <li>Posisi : <?= $pemain['posisi'] ?></li>
-                <li>Asal : <?= $pemain['asal'] ?></li>
-                <li>No Punggung : <?= $pemain['no_punggung'] ?></li>
-                <li>gambar : <?= $pemain['gambar'] ?></li>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    Nama : <?= $pemain['nama'] ?> 
+                    <a href="<?= BASEURL ?>/pemain/detail/<?= $pemain['id'] ?>" class="badge text-bg-primary text-decoration-none">Detail</a>
+                </li>
             </ul>
         <?php endforeach; ?>
     </div>
