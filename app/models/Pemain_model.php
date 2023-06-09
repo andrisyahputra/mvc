@@ -40,6 +40,14 @@
             return $this->db->rowCount();
         // return 0;
         }
+        public function hapusDataPemain($id){
+            $query = "DELETE FROM $this->tabel WHERE id = :id";
+            $this->db->query($query);
+            $this->db->bind('id', $id);
+            $this->db->execute();
+
+            return $this->db->rowCount();
+        }
     }
 
 ?>

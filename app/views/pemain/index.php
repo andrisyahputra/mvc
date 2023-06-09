@@ -15,9 +15,12 @@
         <br>
         <?php foreach($data['pemain'] as $pemain) : ?>
             <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between align-items-start">
+                <li class="list-group-item">
                     Nama : <?= $pemain['nama'] ?> 
-                    <a href="<?= BASEURL ?>/pemain/detail/<?= $pemain['id'] ?>" class="badge text-bg-primary text-decoration-none">Detail</a>
+                    <a href="<?= BASEURL ?>/pemain/hapus/<?= $pemain['id'] ?>" class="badge text-bg-danger text-decoration-none float-end me-3" onclick="return confirm('yakin dihapus..?')">Hapus</a>
+                    
+                    <a href="<?= BASEURL ?>/pemain/detail/<?= $pemain['id'] ?>" class="badge text-bg-primary text-decoration-none float-end me-3">Detail</a>
+
                 </li>
             </ul>
         <?php endforeach; ?>

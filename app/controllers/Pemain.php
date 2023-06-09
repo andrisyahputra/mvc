@@ -27,5 +27,17 @@
                 exit;
             }
         }
+        public function hapus($id){
+            // var_dump($_POST);
+            if ($this->model('Pemain_model')->hapusDataPemain($id) > 0){
+                Flasher::setFlash('berhasil','dihapus','success');
+                header('Location: ' . BASEURL . '/pemain');
+                exit;
+            } else {
+                Flasher::setFlash('gagal','dihapus','danger');
+                header('Location: ' . BASEURL . '/pemain');
+                exit;
+            }
+        }
     }
 ?>
