@@ -18,6 +18,11 @@
         public function tambah(){
             // var_dump($_POST);
             if ($this->model('Pemain_model')->tambahGetDataPemain($_POST) > 0){
+                Flasher::setFlash('berhasil','Ditambahkan','success');
+                header('Location: ' . BASEURL . '/pemain');
+                exit;
+            } else {
+                Flasher::setFlash('gagal','Ditambahkan','danger');
                 header('Location: ' . BASEURL . '/pemain');
                 exit;
             }
