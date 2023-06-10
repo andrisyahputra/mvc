@@ -8,7 +8,7 @@
     <div class="col-6">
         <h3>Daftar Pemain</h3>
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+        <button type="button" class="btn btn-primary tambahDataPemain" data-bs-toggle="modal" data-bs-target="#formModal">
         Tambah Data pemain
         </button>
         <br>
@@ -18,6 +18,8 @@
                 <li class="list-group-item">
                     Nama : <?= $pemain['nama'] ?> 
                     <a href="<?= BASEURL ?>/pemain/hapus/<?= $pemain['id'] ?>" class="badge text-bg-danger text-decoration-none float-end me-3" onclick="return confirm('yakin dihapus..?')">Hapus</a>
+                    
+                    <a href="<?= BASEURL ?>/pemain/ubah/<?= $pemain['id'] ?>" class="badge text-bg-success text-decoration-none float-end me-3 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $pemain["id"] ?>">Ubah</a>
                     
                     <a href="<?= BASEURL ?>/pemain/detail/<?= $pemain['id'] ?>" class="badge text-bg-primary text-decoration-none float-end me-3">Detail</a>
 
@@ -38,6 +40,7 @@
       <div class="modal-body">
         <form method="post" action="<?= BASEURL; ?>/pemain/tambah" enctype="multipart/form-data">
 
+        <input type="hidden" name="id" id="id">
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama pemain</label>
                 <input type="text" class="form-control" id="nama" name="nama">

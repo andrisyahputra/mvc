@@ -39,5 +39,22 @@
                 exit;
             }
         }
+        public function getubah(){
+            // echo $_POST['id'];
+            echo json_encode($this->model('Pemain_model')->getPemainById($_POST['id']));
+            // $this->model('Pemain_model')->getPemainById($_POST['id']);
+        }
+        public function ubah()
+        {
+            if ($this->model('Pemain_model')->ubahDataPemain($_POST) > 0){
+                Flasher::setFlash('berhasil','di ubah','success');
+                header('Location: ' . BASEURL . '/pemain');
+                exit;
+            } else {
+                Flasher::setFlash('gagal','di ubah','danger');
+                header('Location: ' . BASEURL . '/pemain');
+                exit;
+            }
+        }
     }
 ?>

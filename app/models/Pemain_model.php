@@ -48,6 +48,28 @@
 
             return $this->db->rowCount();
         }
+        public function ubahDataPemain($data)
+        {
+            $query = "UPDATE $this->tabel SET
+            nama = :nama, 
+            posisi = :posisi, 
+            asal = :asal, 
+            no_punggung = :no_punggung, 
+            gambar = 'gambar'
+            WHERE id = :id 
+            ";
+            $this->db->query($query);
+            $this->db->bind('nama', $data['nama']);
+            $this->db->bind('posisi', $data['posisi']);
+            $this->db->bind('asal', $data['asal']);
+            $this->db->bind('no_punggung', $data['no_punggung']);
+            $this->db->bind('id', $data['id']);
+
+            $this->db->execute();
+
+            return $this->db->rowCount();
+        // return 0;
+        }
     }
 
 ?>
