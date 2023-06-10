@@ -15,7 +15,7 @@
 
 
 <div class="row">
-    <div class="col-6">
+    <div class="col-lg-6">
         <h3>Daftar Pemain</h3>
 
         <div class="row">
