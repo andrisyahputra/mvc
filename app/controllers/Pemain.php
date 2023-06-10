@@ -56,5 +56,13 @@
                 exit;
             }
         }
+
+        public function cari(){
+            $data['judul'] = 'Cari Pemain';
+            $data['pemain'] = $this->model('Pemain_model')->cariPemain();
+            $this->view('templates/header', $data);
+            $this->view('pemain/index', $data);
+            $this->view('templates/footer');
+        }
     }
 ?>

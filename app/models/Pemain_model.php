@@ -70,6 +70,17 @@
             return $this->db->rowCount();
         // return 0;
         }
+
+        public function cariPemain()
+        {
+            $keyword = $_POST['keyword'];
+            $query = "SELECT * FROM $this->tabel WHERE nama LIKE :keyword";
+
+            $this->db->query($query);
+            $this->db->bind("keyword", "%$keyword%");
+            return $this->db->resultSet();
+
+        }
     }
 
 ?>

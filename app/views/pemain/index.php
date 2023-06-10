@@ -4,15 +4,29 @@
   </div>
 </div>
 
+<div class="row mb-3">
+  <div class="col-lg-6">
+        <button type="button" class="btn btn-primary tambahDataPemain" data-bs-toggle="modal" data-bs-target="#formModal">
+          Tambah Data pemain
+        </button>
+  </div>
+</div>
+
+
+
 <div class="row">
     <div class="col-6">
         <h3>Daftar Pemain</h3>
 
-        <button type="button" class="btn btn-primary tambahDataPemain" data-bs-toggle="modal" data-bs-target="#formModal">
-        Tambah Data pemain
-        </button>
-        <br>
-        <br>
+        <div class="row">
+          <form method="post" action="<?= BASEURL ?>/pemain/cari">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Cari pemain" name="keyword" autofocus autocomplete="off">
+              <button class="btn btn-outline-secondary" type="submit" id="tombolCari">Cari</button>
+            </div>
+          </form>
+        </div>
+
         <?php foreach($data['pemain'] as $pemain) : ?>
             <ul class="list-group">
                 <li class="list-group-item">
